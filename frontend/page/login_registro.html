@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Registro e inicio de sesión</title>
+    <link rel="stylesheet" href="../assets/css/login_registro.css"xa>
+</head>
+
+<body>
+
+    <div class="contenedor__seccion--contacto" id="seccionPrincipal">
+
+        <div class="contenedor__registro--contacto" id="contenedorFormularios">
+
+            <!-- Títulos fijos estáticos en el fondo -->
+            <div class="titulo-estatico-izquierdo">
+                <h2>registro</h2>
+            </div>
+            
+            <div class="titulo-estatico-derecho">
+                <h2>inicio</h2>
+            </div>
+
+            <!-- Bloque móvil que se desliza y gira -->
+            <div class="registro-contacto_lado-derecho" id="bloqueFormulario">
+
+                <!-- Tarjeta amarilla unificada -->
+                <div class="registro-contacto" id="tarjetaContenedora">
+
+                    <!-- Formulario de registro -->
+                    <form id="registro">
+                        <div class="form-inner">
+                            <div class="registro-contacto__inputs">
+                                <input type="text" name="nombre" placeholder="nombre" autocomplete="username" required>
+                                <small class="error" id="error-nombre"></small>
+
+                                <input type="password" name="contrasena" placeholder="contrasena" autocomplete="new-password" required>
+                                <small class="error" id="error-contrasena"></small>
+
+                                <input type="email" name="correo" placeholder="correo" autocomplete="email" required>
+                                <small class="error" id="error-correo"></small>
+                            </div>
+
+                            <div class="registro-contacto__boton">
+                                <button type="submit" id="btnEnviar">aceptar</button>
+                            </div>
+
+                            <div class="registro-contacto__mensaje-global" id="mensajeGlobal" aria-live="polite"></div>
+
+                            <div class="registro-contacto__inicieseccion">
+                                <button type="button" id="mostrarLogin">Tengo cuenta</button>
+                            </div>
+                        </div>
+                    </form>
+
+                    <!-- Formulario de inicio de sesión -->
+                    <form id="inicioSesion" hidden>
+                        <div class="form-inner">
+                            <div class="registro-contacto__inputs">
+                                <input type="email" id="loginCorreo" name="loginCorreo" placeholder="correo" autocomplete="email" required>
+                                <input type="password" id="loginContrasena" name="loginContrasena" placeholder="contrasena" autocomplete="current-password" required>
+                            </div>
+
+                            <div class="registro-contacto__boton">
+                                <button type="submit">aceptar</button>
+                            </div>
+
+                            <div class="registro-contacto__mensaje-global" id="mensajeLogin" aria-live="polite"></div>
+
+                            <div class="registro-contacto__inicieseccion">
+                                <button type="button" id="mostrarRegistro">Crear cuenta</button>
+                            </div>
+                        </div>
+                    </form>
+
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script src="../assets/js/login_registro_registro.js"></script>
+    <script src="../assets/js/login_registro_secion.js"></script>
+</body>
+</html>

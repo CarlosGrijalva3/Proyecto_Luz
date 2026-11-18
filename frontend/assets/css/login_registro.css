@@ -1,0 +1,278 @@
+/* ----   VARIABLES Y FUENTES---- */
+@import url('https://fonts.googleapis.com/css2?family=Courier+Prime&family=Reenie+Beanie&display=swap');
+
+:root {
+    --bg-pantalla: #ECEFE4;
+    --color-gris: #747471;
+    --color-gris-oscuro: #878784;
+    --color-amarillo: #E8E86B;
+    --color-amarillo-oscuro: #34342E;
+    --color-azul-oscuro: #475759;
+    --fonts_1: 'Factory';
+    --fonts_2: 'Hello_January';
+    --fonts_3: 'Natalia';
+}
+
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    background-color: var(--bg-pantalla);
+    width: 100vw;
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    overflow: hidden;
+}
+
+[hidden] {
+    display: none !important;
+}
+
+.contenedor__seccion--contacto {
+    position: relative;
+    width: 100vw;
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+/* ----  MARCO CONTENEDOR PRINCIPAL---- */
+.contenedor__registro--contacto {
+    position: relative;
+    width: 860px;
+    height: 380px;
+    
+    background-image: 
+        repeating-linear-gradient(52deg, var(--color-azul-oscuro), var(--color-azul-oscuro) 69px, transparent 50px, transparent 90px),
+        repeating-linear-gradient(164deg, var(--color-azul-oscuro), var(--color-azul-oscuro) 58px, transparent 60px, transparent 67px),
+        repeating-linear-gradient(232deg, var(--color-azul-oscuro), var(--color-azul-oscuro) 60px, transparent 50px, transparent 90px), 
+        repeating-linear-gradient(344deg, var(--color-azul-oscuro), var(--color-azul-oscuro) 84px, transparent 60px, transparent 100px);
+    background-size: 0.8px 100%, 100% 0.8px, 0.8px 100%, 100% 0.8px;
+    background-position: 0 0, 0 0, 100% 0, 0 100%;
+    background-repeat: no-repeat;
+    border-radius: 8px;
+
+    display: flex;
+    align-items: center;
+    opacity: 1;
+    visibility: visible;
+}
+
+/* ----  TÍTULOS ESTÁTICOS EN EL FONDO---- */
+.titulo-estatico-izquierdo {
+    position: absolute;
+    left: 60px;
+    z-index: 1;
+}
+
+.titulo-estatico-izquierdo h2 {
+    font-family: var(--fonts_2);
+    font-size: 9rem;
+    color: var(--color-azul-oscuro);
+    font-weight: normal;
+    text-transform: lowercase;
+    transform: translateY(-32px);
+}
+
+.titulo-estatico-derecho {
+    position: absolute;
+    right: 60px;
+    z-index: 1;
+}
+
+.titulo-estatico-derecho h2 {
+    font-family: var(--fonts_2);
+    font-size: 9rem;
+    color: var(--color-azul-oscuro);
+    font-weight: normal;
+    text-transform: lowercase;
+    transform: translateY(-32px);
+}
+
+/* ----  BLOQUE MÓVIL (TARJETA AMARILLA Y GIRO)---- */
+.registro-contacto_lado-derecho {
+    position: absolute;
+    right: 20px;
+    z-index: 10;
+    transition: transform 0.7s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+/* Tarjeta unificada con transiciones fluidas de giro y altura */
+.registro-contacto {
+    position: relative;
+    background-color: var(--color-amarillo);
+    width: 403px;
+    height: 523px; /* Estado por defecto: Registro */
+    border-radius: 6px;
+    border: 2.8px solid var(--color-amarillo-oscuro);
+    box-shadow: 0 8px 25px rgba(0, 0, 0, 0.05);
+    
+    transform: rotate(18deg); /* Rotación inicial para Registro */
+    transition: transform 0.7s cubic-bezier(0.4, 0, 0.2, 1), height 0.7s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+/* Movimiento y giro al pasar a Inicio de Sesión */
+.contenedor__registro--contacto.inicio-sesion .registro-contacto_lado-derecho {
+    transform: translateX(-435px);
+}
+
+.contenedor__registro--contacto.inicio-sesion .registro-contacto {
+    transform: rotate(337deg); /* Rotación para Iniciar Sesión */
+    height: 403px;             /* Altura para Iniciar Sesión */
+}
+
+/* Cuadro trasero (::before) para Registro */
+.contenedor__registro--contacto:not(.inicio-sesion) .registro-contacto::before {
+    content: '';
+    position: absolute;
+    top: 6px;
+    left: 42px;
+    width: 88%;
+    height: 94%;
+    border: 0.8px solid var(--color-azul-oscuro);
+    pointer-events: none;
+    border-radius: 6px;
+    transform: rotate(339deg);
+    z-index: -1;
+}
+
+/* Cuadro trasero (::before) para Inicio de Sesión */
+.contenedor__registro--contacto.inicio-sesion .registro-contacto::before {
+    content: '';
+    position: absolute;
+    top: -8px;
+    left: 22px;
+    width: 90%;
+    height: 100%;
+    border: 0.8px solid var(--color-azul-oscuro);
+    pointer-events: none;
+    border-radius: 26px;
+    transform: rotate(32deg);
+    z-index: -1;
+}
+
+/* ---- FORMULARIOS INTERNOS Y TRANSICIÓN DE OPACIDAD ---- */
+.registro-contacto form {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    opacity: 1;
+    visibility: visible;
+    transition: opacity 0.3s ease;
+}
+
+.registro-contacto form[hidden] {
+    display: flex !important;
+    opacity: 0;
+    visibility: hidden;
+    pointer-events: none;
+}
+
+/* Diseño interno formulario Registro */
+#registro .form-inner {
+    transform: rotate(342deg) translateX(15px);
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    height: 100%;
+    margin-top: 91px;
+    padding: 19px 44px 218px 99px;
+}
+
+/* Diseño interno formulario Inicio de Sesión */
+#inicioSesion .form-inner {
+    transform: rotate(23deg);
+    display: flex;
+    flex-direction: column;
+    justify-content: space-evenly;
+    height: 80%;
+    margin-top: 15px;
+    padding: 99px 63px 0px 76px;
+}
+
+/* ---- ESTILOS DE CAMPOS Y BOTONES ---- */
+.registro-contacto__inputs {
+    display: flex;
+    flex-direction: column;
+    gap: 19px;
+}
+
+.registro-contacto__inputs input {
+    background: transparent;
+    border: none;
+    border-bottom: 0.8px solid var(--color-gris-oscuro);
+    color: var(--color-azul-oscuro);
+    padding: 5px 0;
+    font-family: var(--fonts_1);
+    font-size: 17px;
+    outline: none;
+    
+}
+
+.registro-contacto__inputs input::placeholder {
+    color: var(--color-gris-oscuro);
+    opacity: 0.85;
+    font-family: var(--fonts_1);
+}
+
+.registro-contacto__boton button {
+    width: 100%;
+    background: transparent;
+    border: 0.8px solid var(--color-gris-oscuro);
+    padding: 13px;
+    border-radius: 2px;
+    font-family: var(--fonts_3);
+    font-size: 2.2rem;
+    color: var(--color-gris-oscuro);
+    cursor: pointer;
+    transition: background 0.2s ease;
+}
+
+.registro-contacto__boton button:hover {
+    background: rgba(0, 0, 0, 0.04);
+}
+
+.registro-contacto__inicieseccion {
+    text-align: center;
+}
+
+.registro-contacto__inicieseccion button {
+    background: none;
+    border: none;
+    font-family: var(--fonts_1);
+    font-size: 12px;
+    color: var(--color-gris-oscuro);
+    cursor: pointer;
+    text-decoration: underline;
+}
+
+.error {
+    font-family: var(--fuente-mono);
+    font-size: 11px;
+    color: var(--color-azul-oscuro);
+}
+
+/* ---- DECLARACIÓN DE FUENTES ---- */
+@font-face {
+    font-family: 'Factory';
+    src: url('../fonts/factory_ljds/Factory_LJDS.ttf') format('truetype');
+}
+
+@font-face {
+    font-family: 'Hello_January';
+    src: url('../fonts/hellojanuaryscript/Hello_January_script_cyrillic_Script.otf') format('opentype');
+}
+
+@font-face {
+    font-family: 'Natalia';
+    src: url('../fonts/natalia-signature/Natalia_Signature.otf') format('opentype');
+    font-weight: bold;
+}

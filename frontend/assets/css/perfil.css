@@ -1,0 +1,311 @@
+/* ==========================================
+   VARIABLES Y FUENTES
+   ========================================== */
+@import url('https://fonts.googleapis.com/css2?family=Courier+Prime&family=Reenie+Beanie&display=swap');
+
+:root {
+    --bg-pantalla: #ECEFE4;
+    --color-gris: #747471;
+    --color-gris-oscuro: #878784;
+    --color-gris-oscuro-2: #666762;
+    --color-amarillo: #E8E86B;
+    --color-amarillo-oscuro: #34342E;
+    --color-amarillo-gris: #808165;
+    --color-azul-oscuro: #475759;
+    --fonts_1: 'Factory', sans-serif;
+    --fonts_2: 'Hello_January', cursive;
+    --fonts_3: 'Natalia', cursive;
+}
+
+@font-face {
+    font-family: 'Factory';
+    src: url('../fonts/factory_ljds/Factory_LJDS.ttf') format('truetype');
+}
+
+@font-face {
+    font-family: 'Hello_January';
+    src: url('../fonts/hellojanuaryscript/Hello_January_script_cyrillic_Script.otf') format('opentype');
+}
+
+@font-face {
+    font-family: 'Natalia';
+    src: url('../fonts/natalia-signature/Natalia_Signature.otf') format('opentype');
+    font-weight: bold;
+}
+
+/* --------- ESTILOS PANTALLA PERFIL ---------*/
+
+body {
+    background-color: var(--bg-pantalla);
+    font-family: var(--fonts_1);
+    color: var(--color-amarillo-oscuro);
+    overflow-x: hidden;
+    margin: 0;
+    padding: 0;
+}
+
+#perfil {
+    position: relative;
+    width: 100vw;
+    min-height: 100vh; /* Permite que la página crezca hacia abajo */
+    height: auto;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: center;
+    /*padding: 60px 20px;*/
+    padding: 135px 20px;
+    box-sizing: border-box;
+    overflow-y: auto;
+}
+
+/* El marco principal de perfil abarca gran parte de la primera vista */
+.perfil-dashed-frame {
+    background-image: 
+    repeating-linear-gradient(64deg, var(--color-azul-oscuro), var(--color-azul-oscuro) 69px, transparent 50px, transparent 90px),
+    repeating-linear-gradient(160deg, var(--color-azul-oscuro), var(--color-azul-oscuro) 58px, transparent 60px, transparent 67px),
+    repeating-linear-gradient(246deg, var(--color-azul-oscuro), var(--color-azul-oscuro) 60px, transparent 50px, transparent 90px), 
+    repeating-linear-gradient(328deg, var(--color-azul-oscuro), var(--color-azul-oscuro) 84px, transparent 60px, transparent 100px);
+    background-size: 0.8px 100%, 100% 0.8px, 0.8px 100%, 100% 0.8px;
+    background-position: 0 0, 0 0, 100% 0, 0 100%;
+    background-repeat: no-repeat;
+
+    position: relative;
+    padding: 0px 50px;
+    width: 80%;
+    max-width: 750px;
+    /* Hacemos que el cuadro sea más alto para que domine la primera pantalla */
+    height: 60vh; 
+    min-height: 380px;
+    transform: rotate(-1.5deg);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-bottom: 145px; /* Deja espacio antes de llegar a los cálculos */
+}
+
+.perfil-card {
+    position: relative;
+    z-index: 2;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 40px;
+    width: 100%;
+    transform: rotate(2deg);
+}
+
+.perfil-top-row {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+}
+
+.perfil-form {
+    display: flex;
+    justify-content: center;
+    width: 100%;
+}
+
+.user-input-group {
+    display: flex;
+    align-items: center;
+    gap: 20px;
+    background: transparent;
+}
+
+.input-perfil {
+    border: none;
+    border-bottom: 1.5px solid var(--color-azul-oscuro);
+    background: transparent;
+    font-family: var(--fonts_1);
+    font-size: 1.4rem;
+    color: var(--color-amarillo-oscuro);
+    outline: none;
+    width: 200px;
+    text-align: center;
+    padding-bottom: 5px;
+}
+
+.input-perfil:disabled {
+    color: var(--color-amarillo-oscuro);
+}
+
+.btn-action {
+    border: 1.5px solid var(--color-azul-oscuro);
+    border-radius: 8px;
+    cursor: pointer;
+    transition: all 0.2s ease;
+}
+
+.btn-edit {
+    background-color: transparent;
+    color: var(--color-azul-oscuro);
+    padding: 10px 12px;
+    font-size: 1.1rem;
+    border-radius: 4px;
+}
+
+.btn-edit:hover {
+    background-color: rgba(71, 87, 89, 0.1);
+}
+
+.btn-save {
+    background-color: var(--color-amarillo);
+    color: var(--color-amarillo-oscuro);
+    font-family: var(--fonts_3);
+    font-size: 2.3rem;
+    padding: 0.5px 22px;
+    border-radius: 4px;
+}
+
+.btn-save:hover {
+    filter: brightness(0.95);
+}
+
+.perfil-bottom-row {
+    display: flex;
+    justify-content: center;
+    width: 100%;
+}
+
+.btn-borrar {
+    background-color: transparent;
+    color: var(--color-amarillo-oscuro);
+    border: 1.5px solid var(--color-azul-oscuro);
+    padding: 0.5px 35px;
+    font-family: var(--fonts_3);
+    font-size: 2.3rem;
+    border-radius: 4px;
+    cursor: pointer;
+    transition: all 0.2s ease;
+    width: 390px;
+}
+
+.btn-borrar:hover {
+    background-color: rgba(71, 87, 89, 0.05);
+}
+
+/* ==========================================
+   SECCIÓN INFERIOR: HISTORIAL DE CÁLCULOS (3 POR FILA)
+   ========================================== */
+/* Sección inferior que aparece al bajar el scroll */
+.calculos-perfil-section {
+    width: 85%;
+    max-width: 1100px;
+    margin-top: 40px;
+    margin-bottom: 80px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    z-index: 2;
+}
+
+.calculos-titulo {
+    font-family: var(--fonts_3);
+    font-size: 2.2rem;
+    color: var(--color-amarillo-oscuro);
+    margin-bottom: 35px;
+    text-align: center;
+}
+
+.lista-calculos {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 30px;
+    width: 100%;
+}
+
+/* Tarjeta individual de cálculo con el estilo de trazo punteado */
+.calculo-card {
+    position: relative;
+    padding: 25px 20px;
+    border-radius: 12px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-between;
+    min-height: 180px;
+    background-color: transparent;
+    text-align: center;
+    gap: 8px;
+    z-index: 2;
+}
+
+/* Marco punteado independiente que gira libremente detrás del contenido */
+.calculo-card::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+
+
+
+
+
+    background-image: 
+        repeating-linear-gradient(64deg, var(--color-azul-oscuro), var(--color-azul-oscuro) 69px, transparent 50px, transparent 90px),
+        repeating-linear-gradient(160deg, var(--color-azul-oscuro), var(--color-azul-oscuro) 58px, transparent 60px, transparent 67px),
+        repeating-linear-gradient(246deg, var(--color-azul-oscuro), var(--color-azul-oscuro) 60px, transparent 50px, transparent 90px), 
+        repeating-linear-gradient(228deg, var(--color-azul-oscuro), var(--color-azul-oscuro) 54px, transparent 60px, transparent 100px);
+    background-size: 0.8px 100%, 100% 0.8px, 0.8px 100%, 100% 0.8px;
+    background-position: 0 0, 0 0, 100% 0, 0 100%;
+    background-repeat: no-repeat;
+    border-radius: 12px;
+    
+    /* ¡MUEVE O ROTA ESTE MARCO LIBREMENTE AQUÍ SIN AFECTAR EL TEXTO! */
+    transform: rotate(-2deg); 
+    
+    z-index: -1;
+    pointer-events: none;
+}
+
+
+.calculo-card h3 {
+    font-family: var(--fonts_3);
+    font-size: 1.4rem;
+    color: var(--color-amarillo-oscuro);
+    margin-bottom: 4px;
+}
+
+.calculo-card p {
+    font-family: var(--fonts_1);
+    font-size: 0.95rem;
+    color: var(--color-amarillo-oscuro);
+    margin: 2px 0;
+}
+
+/* Botón eliminar dentro de la tarjeta de cálculo (Estilo amarillo WikiLuz) */
+.btn-borrar-calculo {
+    background-color: var(--color-amarillo);
+    color: var(--color-amarillo-oscuro);
+    border: 1.5px solid var(--color-azul-oscuro);
+    padding: 4px 22px;
+    font-family: var(--fonts_3);
+    font-size: 1.3rem;
+    border-radius: 6px;
+    cursor: pointer;
+    transition: filter 0.2s ease;
+    margin-top: 10px;
+}
+
+.btn-borrar-calculo:hover {
+    filter: brightness(0.95);
+}
+
+/* Responsivo para pantallas más pequeñas (opcional, ajusta a 1 o 2 columnas si es necesario) */
+@media (max-width: 900px) {
+    .lista-calculos {
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
+
+@media (max-width: 600px) {
+    .lista-calculos {
+        grid-template-columns: 1fr;
+    }
+}

@@ -1,0 +1,290 @@
+
+{
+  "luz": {
+    "titulo": "Luz",
+    "Que es": "La luz es una forma de energía que nos permite observar los objetos y percibir sus colores. Forma parte del espectro electromagnético y la luz visible es la que puede detectar el ojo humano.",
+    "Propiedades": [
+      {
+        "nombre": "Reflexión",
+        "descripcion": "La luz rebota en una superficie.",
+        "imagen": "reflexion.png"
+      },
+      {
+        "nombre": "Refracción",
+        "descripcion": "La luz cambia de dirección.",
+        "imagen": "refraccion.png"
+      },
+      {
+        "nombre": "Transmisión",
+        "descripcion": "La luz atraviesa un material.",
+        "imagen": "transmision.png"
+      },
+      {
+        "nombre": "Absorción",
+        "descripcion": "Un material absorbe parte de la luz.",
+        "imagen": "absorcion.png"
+      }
+    ],
+    "Medicion": [
+      {
+        "nombre": "Lumen (lm)",
+        "descripcion": "Cuánto flujo luminoso produce una fuente.",
+        "imagen": "lumen.png"
+      },
+      {
+        "nombre": "Candela (cd)",
+        "descripcion": "Intensidad luminosa.",
+        "imagen": "candela.png"
+      },
+      {
+        "nombre": "Lux (lx)",
+        "descripcion": "Cantidad de luz que llega a una superficie.",
+        "imagen": "lux.png"
+      },
+      {
+        "nombre": "Luminancia (cd/m²)",
+        "descripcion": "Luz que se percibe desde una superficie en una dirección determinada.",
+        "imagen": "luminancia.png"
+      }
+    ],
+    "Color": [
+      {
+        "nombre": "Cálida",
+        "temperatura": "2200–3000 K",
+        "imagen": "luz-calida.png"
+      },
+      {
+        "nombre": "Neutra",
+        "temperatura": "3000–4500 K",
+        "imagen": "luz-neutra.png"
+      },
+      {
+        "nombre": "Fría",
+        "temperatura": "5000–6500 K",
+        "imagen": "luz-fria.png"
+      }
+    ],
+    "IRCoCRI": {
+      "descripcion": "Indica qué tan fielmente una fuente de luz permite apreciar los colores de los objetos.",
+      "niveles": [
+        {
+          "nombre": "IRC alto",
+          "valor": "Mayor que 90",
+          "descripcion": "Reproducción de colores más fiel.",
+          "imagen": "irc-alto.png"
+        },
+        {
+          "nombre": "IRC bajo",
+          "valor": "Menor que 70",
+          "descripcion": "Reproducción de colores menos fiel.",
+          "imagen": "irc-bajo.png"
+        }
+      ]
+    },
+    "Deslumbramiento": {
+      "descripcion": "Ocurre cuando una fuente o superficie tiene una luminancia excesiva en comparación con su entorno y puede dificultar la visión o causar incomodidad.",
+      "tipos": [
+        {
+          "nombre": "Directo",
+          "descripcion": "Vemos directamente la fuente de luz.",
+          "imagen": "deslumbramiento-directo.png"
+        },
+        {
+          "nombre": "Reflejado",
+          "descripcion": "Rebota en una superficie.",
+          "imagen": "deslumbramiento-reflejado.png"
+        }
+      ]
+    }
+  },
+
+
+
+
+
+
+  "lampara": {
+    "titulo": "Lámpara",
+    "tipos": [
+      {
+        "nombre": "Incandescente",
+        "color": "Amarillo cálido",
+        "vidaUtil": "1000–2000 h",
+        "uso": "Hogares y lámparas comunes",
+        "imagen": "incandescente.png"
+      },
+      {
+        "nombre": "Halogenuros metalicos",
+        "color": "Blanco brillante",
+        "vidaUtil": "6000–20000 h",
+        "uso": "Estadios, alumbrado público, espacios comerciales y televisión",
+        "imagen": "halogenuros-metalicos.png"
+      },
+      {
+        "nombre": "Led",
+        "color": "Cálido, neutro, frío o multicolor",
+        "vidaUtil": "25000–50000 h",
+        "uso": "Hogares, oficinas, comercios, automóviles, pantallas y decoración",
+        "imagen": "led.png"
+      },
+      {
+        "nombre": "Halogena",
+        "color": "Blanco brillante",
+        "vidaUtil": "3000 h",
+        "uso": "Faros y decoración de espacios interiores",
+        "imagen": "halogena.png"
+      },
+      {
+        "nombre": "Vapor de sodio",
+        "color": "Amarillo intenso",
+        "vidaUtil": "12000–24000 h",
+        "uso": "Carreteras y alumbrado urbano",
+        "imagen": "vapor-sodio.png"
+      },
+      {
+        "nombre": "Fluorescente",
+        "color": "Blanco cálido o neutro",
+        "vidaUtil": "5000–10000 h",
+        "uso": "Hogares, oficinas y comercios",
+        "imagen": "fluorescente.png"
+      },
+      {
+        "nombre": "Vapor de mercurio",
+        "color": "Blanco azulado",
+        "vidaUtil": "12000–16000 h",
+        "uso": "Calles, fábricas, parques y áreas industriales",
+        "imagen": "vapor-mercurio.png"
+      }
+    ],
+    "luminarias": [
+      { 
+        "nombre": "empotrada", 
+        "imagen": "luminaria-empotrada.png" 
+      },
+      { "nombre": "sobrepuesta", "imagen": "luminaria-sobrepuesta.png" },
+      { "nombre": "colgante", "imagen": "luminaria-colgante.png" },
+      { "nombre": "de riel", "imagen": "luminaria-riel.png" },
+      { "nombre": "de pared", "imagen": "luminaria-pared.png" },
+      { "nombre": "de piso", "imagen": "luminaria-piso.png" }
+    ],
+    "elementos": [
+      { 
+        "nombre": "difusor", 
+        "imagen": "difusor.png" 
+      },
+      { "nombre": "reflector", "imagen": "reflector.png" },
+      { "nombre": "refractor", "imagen": "refractor.png" },
+      { "nombre": "mixto", "imagen": "mixto.png" }
+    ]
+  },
+
+
+
+
+
+
+  "iluminacion": {
+    "titulo": "Iluminación",
+    "sistemas": [
+      { 
+        "nombre": "Directa", 
+        "imagen": "sistema-directo.png" 
+      },
+      { "nombre": "Semidirecta", "imagen": "sistema-semidirecto.png" },
+      { "nombre": "Difusa", "imagen": "sistema-difuso.png" },
+      { "nombre": "Directa-indirecta", "imagen": "sistema-directo-indirecto.png" },
+      { "nombre": "Semi-indirecta", "imagen": "sistema-semi-indirecto.png" },
+      { "nombre": "Indirecta", "imagen": "sistema-indirecto.png" }
+    ],
+    "metodos": [
+      {
+        "nombre": "General",
+        "descripcion": "Ilumina todo el espacio.",
+        "imagen": "metodo-general.png"
+      },
+      {
+        "nombre": "General localizada",
+        "descripcion": "Ilumina todo el espacio y concentra más luz en determinadas zonas.",
+        "imagen": "metodo-general-localizada.png"
+      },
+      {
+        "nombre": "Localizada",
+        "descripcion": "Ilumina directamente una zona de trabajo.",
+        "imagen": "metodo-localizada.png"
+      },
+      {
+        "nombre": "De acentuacion",
+        "descripcion": "Destaca un objeto o elemento.",
+        "imagen": "metodo-acentuacion.png"
+      },
+      {
+        "nombre": "De efectos",
+        "descripcion": "Utiliza la luz para crear un efecto visual.",
+        "imagen": "metodo-efectos.png"
+      },
+      {
+        "nombre": "Decorativa",
+        "descripcion": "La propia lámpara también forma parte de la decoración.",
+        "imagen": "metodo-decorativo.png"
+      },
+      {
+        "nombre": "Integrada en la arquitectura",
+        "descripcion": "La fuente queda oculta y solamente se percibe la luz.",
+        "imagen": "metodo-arquitectura.png"
+      }
+    ]
+  },
+
+
+
+
+
+
+  "diseno": {
+    "titulo": "Diseño de iluminación",
+    "lugares": [
+      { 
+        "nombre": "Casa", 
+        "imagen": "lugar-casa.png" 
+      },
+      { "nombre": "Oficina", "imagen": "lugar-oficina.png" },
+      { "nombre": "Escuela", "imagen": "lugar-escuela.png" },
+      { "nombre": "Hospital", "imagen": "lugar-hospital.png" },
+      { "nombre": "Restaurante", "imagen": "lugar-restaurante.png" },
+      { "nombre": "Hotel", "imagen": "lugar-hotel.png" },
+      { "nombre": "Tienda", "imagen": "lugar-tienda.png" },
+      { "nombre": "Biblioteca", "imagen": "lugar-biblioteca.png" }
+    ],
+    "espacios": [
+      { 
+        "nombre": "Sala", 
+        "imagen": "espacio-sala.png" 
+      },
+      { "nombre": "Recámara", "imagen": "espacio-recamara.png" },
+      { "nombre": "Cocina", "imagen": "espacio-cocina.png" },
+      { "nombre": "Comedor", "imagen": "espacio-comedor.png" },
+      { "nombre": "Área de trabajo", "imagen": "espacio-trabajo.png" },
+      { "nombre": "Aula", "imagen": "espacio-aula.png" },
+      { "nombre": "Pasillo", "imagen": "espacio-pasillo.png" },
+      { "nombre": "Baño", "imagen": "espacio-bano.png" }
+    ],
+    "actividades": [
+      { 
+        "nombre": "Leer", 
+        "imagen": "actividad-leer.png" 
+      },
+      { "nombre": "Estudiar", "imagen": "actividad-estudiar.png" },
+      { "nombre": "Trabajar", "imagen": "actividad-trabajar.png" },
+      { "nombre": "Cocinar", "imagen": "actividad-cocinar.png" },
+      { "nombre": "Comer", "imagen": "actividad-comer.png" },
+      { "nombre": "Dormir", "imagen": "actividad-dormir.png" },
+      { "nombre": "Descansar", "imagen": "actividad-descansar.png" },
+      { "nombre": "Usar la computadora", "imagen": "actividad-computadora.png" }
+    ],
+    "Nivel de iluminacion": {
+      "imagen": "tabla-iluminacion.png",
+      "tabla": []
+    },
+     "Calculo iluminacion": {}
+  }
+}

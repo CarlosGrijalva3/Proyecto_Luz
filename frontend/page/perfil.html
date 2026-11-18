@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Perfil - WikiLuz</title>
+    <link rel="stylesheet" href="../assets/css/perfil.css">
+    <!-- Iconos FontAwesome para botones o redes si es necesario -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+</head>
+<body>
+
+    <!-- Menú de navegación fijo -->
+    <header class="header-nav">
+        <div class="logo-container">
+            <a href="wikiLuz.html">
+                <img src="../assets/img/logo.png" alt="Logo" class="logo-img">
+            </a>
+        </div>
+    </header>
+
+    <main class="main-container">
+
+        <!-- Pantalla Completa Perfil -->
+        <section id="perfil" class="screen-section">
+            
+            <!-- Marco punteado exterior (Perfil Principal) -->
+            <div class="perfil-dashed-frame">
+                <div class="perfil-card">
+                    <!-- Fila Superior: Campo de usuario, Lápiz de Editar y Botón Guardar -->
+                    <div class="perfil-top-row">
+                        <form id="form-perfil" class="perfil-form" onsubmit="return false;">
+                            <div class="user-input-group">
+                                <input type="text" id="input-usuario" value="vegeta77" class="input-perfil" disabled>
+                                <button type="button" id="btn-editar" class="btn-action btn-edit" title="Editar">
+                                    <i class="fas fa-pen"></i>
+                                </button>
+                                <button type="button" id="btn-guardar" class="btn-action btn-save" title="Guardar">
+                                    guardar
+                                </button>
+                            </div>
+                        </form>
+                    </div>
+
+                    <!-- Fila Inferior: Botón Borrar Cuenta -->
+                    <div class="perfil-bottom-row">
+                        <button type="button" id="btn-borrar-cuenta" class="btn-borrar">
+                            Borrar cuenta
+                        </button>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Contenedor inferior para los cálculos (Grid de 3 por fila) -->
+            <div class="calculos-perfil-section">
+                <h2 class="calculos-titulo">Mis calculos de iluminacion</h2>
+                <div id="lista-calculos" class="lista-calculos">
+                    <!-- Las tarjetas se insertarán aquí dinámicamente -->
+                </div>
+            </div>
+
+        </section>
+
+    </main>
+    <script src="../assets/js/perfil.js"></script>
+</body>
+</html>
