@@ -1,20 +1,25 @@
 <!DOCTYPE html>
 <html lang="es">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>WikiLuz</title>
     <link rel="stylesheet" href="../assets/css/wikiLuz.css">
+    <link rel="stylesheet" href="../assets/css/luciernagas.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
 </head>
+
 <body>
+    <div id="fondo-luciernagas" aria-hidden="true"></div> <!--Luciernagas-->
 
     <main class="main-container">
-
-        <!-- Sección 1: Inicio (Home) -->
+        <!-- Seccion 1: Inicio (Home) -->
         <section id="inicio" class="screen-section home-section">
             <div class="home-top-bar">
-                <span class="logo-text-home">logo</span>
+                <div class="logo-text-home">
+                    <img src="../assets/images/logo.png" alt="Logo WikiLuz" class="logo-img-home">
+                </div>
                 <div class="btn-perfil-wrapper">
                     <a href="perfil.html" class="btn-perfil-home"><span>perfil</span></a>
                 </div>
@@ -44,7 +49,7 @@
             </div>
         </section>
 
-        <!-- Navegación Sticky -->
+        <!-- Navegacion Sticky -->
         <nav class="sticky-nav-bar">
             <div class="nav-links">
                 <a href="#luz" class="nav-btn">luz</a>
@@ -54,8 +59,8 @@
             </div>
         </nav>
 
-        <!-- Sección 2: Luz -->
-        <section id="luz" class="screen-section screen-section trazo-seccion-1">
+        <!-- Seccion 2: Luz -->
+        <section id="luz" class="screen-section trazo-seccion-1">
             <div class="luz-layout">
                 <div class="luz-sidebar">
                     <button class="luz-btn pill-btn btn-1 active">Que es?</button>
@@ -93,8 +98,8 @@
             </div>
         </section>
 
-        <!-- Sección 3: Lámpara -->
-        <section id="lampara" class="screen-section screen-section trazo-seccion-1">
+        <!-- Seccion 3: Lámpara -->
+        <section id="lampara" class="screen-section trazo-seccion-1">
             <div class="lampara-wrapper">
                 <div class="lampara-main-yellow">
                     <div class="lamp-carousel-top">
@@ -126,18 +131,11 @@
                     </div>
                 </div>
 
-
-
-
                 <!-- Columna derecha -->
                 <div class="lampara-side-dark">
-                    
                     <!-- TARJETA SUPERIOR (Luminarias / Empotrada) -->
                     <div class="card-wrapper-relative">
-                        <!-- 1. Cuadro amarillo de fondo (Múevelo y rótalo libremente como sombra visual) -->
                         <div class="yellow-shadow-box box-top"></div>
-
-                        <!-- 2. Contenido principal (Texto, imagen y flechas completamente rectos) -->
                         <div class="dark-widget-card widget-top">
                             <span class="widget-label">Luminarias</span>
                             <div class="widget-carousel-controls">
@@ -159,10 +157,7 @@
 
                     <!-- TARJETA INFERIOR (Elementos / Difusor) -->
                     <div class="card-wrapper-relative">
-                        <!-- 1. Cuadro amarillo de fondo (Múevelo y rótalo libremente como sombra visual) -->
                         <div class="yellow-shadow-box box-bottom"></div>
-
-                        <!-- 2. Contenido principal (Texto, imagen y flechas completamente rectos) -->
                         <div class="dark-widget-card widget-bottom">
                             <span class="widget-label">Elementos</span>
                             <div class="widget-carousel-controls">
@@ -181,32 +176,28 @@
                             </div>
                         </div>
                     </div>
-
                 </div>
-
-
-
             </div>
         </section>
 
-                <!-- Sección 4: Iluminación -->
-        <section id="iluminacion" class="screen-section screen-section trazo-seccion-1">
+        <!-- Seccion 4: Iluminacion -->
+        <section id="iluminacion" class="screen-section trazo-seccion-1">
             <div class="iluminacion-container-outer">
                 <div class="iluminacion-yellow-bg"></div>
-                
-                <!-- Píldora de Sistemas (Izquierda) -->
+
+                <!-- Pildora (Izquierda) -->
                 <div class="vertical-pill-dark pill-left">
                     <span>Sistemas</span>
                 </div>
 
-                <!-- Píldora de Métodos (Derecha) -->
+                <!-- Pildora (Derecha) -->
                 <div class="vertical-pill-dark pill-right">
                     <span>Metodos</span>
                 </div>
 
                 <div class="iluminacion-wrapper">
                     <div class="ilum-center-content">
-                        
+
                         <!-- Fila Superior: Directa + Imagen superior -->
                         <div class="ilum-top-controls">
                             <div class="dashed-selector-box">
@@ -230,7 +221,6 @@
                             <img class="metodo-imagen" alt="Método de iluminación">
                         </div>
 
-
                         <!-- Fila Inferior: General + Descripción -->
                         <div class="ilum-bottom-controls">
                             <div class="dashed-selector-box">
@@ -252,12 +242,11 @@
             </div>
         </section>
 
-        <!-- Sección 5: Diseño -->
-<!-- Sección 5: Diseño -->
+        <!-- Seccion 5: Diseño -->
         <section id="diseno" class="screen-section">
             <div class="diseno-container">
-                
-                <!-- 1. Marco punteado exterior (Libre para rotar y mover sin alterar el interior) -->
+
+                <!-- 1. Marco punteado exterior -->
                 <div class="diseno-dashed-frame"></div>
 
                 <!-- 8 Cuadros decorativos visuales libres de fondo -->
@@ -270,10 +259,10 @@
                 <div class="visual-deco-box deco-7"></div>
                 <div class="visual-deco-box deco-8"></div>
 
-                <!-- 2. Contenido principal (Independiente del marco) -->
+                <!-- 2. Contenido principal -->
                 <div class="diseno-content-wrapper">
-                    
-                    <!-- Barra de navegación (Lugar con flechas y tamaño fijo) -->
+
+                    <!-- Barra de navegacion -->
                     <div class="diseno-header-nav">
                         <button class="arrow-btn-dark diseno_cuadro_1_0">
                             <img src="../assets/images/tu-flecha-izquierda.png" alt="Anterior">
@@ -284,61 +273,53 @@
                         </button>
                     </div>
 
-                    <!-- Cuadrícula de 8 tarjetas con sus fondos amarillos individuales -->
+                    <!-- CuadrIcula de 8 tarjetas -->
                     <div class="diseno-grid">
-                        
-                        <!-- Tarjeta 1 -->
+
                         <div class="card-wrapper-relative card-rot-1">
                             <div class="yellow-shadow-box box-card-1"></div>
                             <div class="place-card"><img class="diseno-imagen" alt=""></div>
                         </div>
 
-                        <!-- Tarjeta 2 -->
                         <div class="card-wrapper-relative card-rot-2">
                             <div class="yellow-shadow-box box-card-2"></div>
                             <div class="place-card"><img class="diseno-imagen" alt=""></div>
                         </div>
 
-                        <!-- Tarjeta 3 -->
                         <div class="card-wrapper-relative card-rot-3">
                             <div class="yellow-shadow-box box-card-3"></div>
                             <div class="place-card"><img class="diseno-imagen" alt=""></div>
                         </div>
 
-                        <!-- Tarjeta 4 -->
                         <div class="card-wrapper-relative card-rot-4">
                             <div class="yellow-shadow-box box-card-4"></div>
                             <div class="place-card"><img class="diseno-imagen" alt=""></div>
                         </div>
 
-                        <!-- Tarjeta 5 -->
                         <div class="card-wrapper-relative card-rot-5">
                             <div class="yellow-shadow-box box-card-5"></div>
                             <div class="place-card"><img class="diseno-imagen" alt=""></div>
                         </div>
 
-                        <!-- Tarjeta 6 -->
                         <div class="card-wrapper-relative card-rot-6">
                             <div class="yellow-shadow-box box-card-6"></div>
                             <div class="place-card"><img class="diseno-imagen" alt=""></div>
                         </div>
 
-                        <!-- Tarjeta 7 -->
                         <div class="card-wrapper-relative card-rot-7">
                             <div class="yellow-shadow-box box-card-7"></div>
                             <div class="place-card"><img class="diseno-imagen" alt=""></div>
                         </div>
 
-                        <!-- Tarjeta 8 -->
                         <div class="card-wrapper-relative card-rot-8">
                             <div class="yellow-shadow-box box-card-8"></div>
                             <div class="place-card"><img class="diseno-imagen" alt=""></div>
                         </div>
 
-                        <!-- Elemento oculto 1: Imagen de Nivel de Iluminación -->
+                        <!-- Elemento oculto -->
                         <img class="nivel-iluminacion-imagen oculto" alt="Nivel de iluminacion">
 
-                        <!-- Elemento oculto 2: Formulario de Cálculo de Iluminación -->
+                        <!-- Elemento oculto 2: Calculo -->
                         <div class="formulario-calculo oculto">
                             <div class="calculo-inputs-row">
                                 <select id="seleccionEspacio" class="calculo-select">
@@ -362,31 +343,28 @@
                                 <button type="button" id="botonIngresar" class="btn-calcular-lumenes">Calcular lumenes necesarios</button>
                             </div>
 
+                            <div id="diseno-infolux">
+                                <h1>sacar la luz ideal de froma informal</h1>
+                            </div>
+
                             <div id="resultado-calculo-box" class="resultado-calculo-box oculto"></div>
                         </div>
 
                     </div>
-
-
-
-
-
-
-
-
-
-
-                    </div>
-
                 </div>
-
             </div>
         </section>
-
-
+   <!-- Pie de página / Footer -->
+        <footer class="wikiluz-footer">
+            <div class="footer-cuadro">
+        </footer>
 
     </main>
 
+ 
+
     <script src="../assets/js/wikiLuz.js"></script>
+    <script src="../assets/js/luciernagas.js"></script>
 </body>
+
 </html>

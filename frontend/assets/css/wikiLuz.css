@@ -1,4 +1,4 @@
-/* ---------------- VARIABLES Y FUENTES ----------------------- */
+/* ---- VARIABLES Y FUENTES ---- */
 @import url('https://fonts.googleapis.com/css2?family=Courier+Prime&family=Reenie+Beanie&display=swap');
 
 :root {
@@ -48,91 +48,38 @@ body {
     overflow-x: hidden;
 }
 
-/*
-.screen-section {
-    width: 100vw;
-    height: 100vh;
-    /*height: 76vh;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    position: relative;
-    border-bottom: 1.5px solid var(--color-azul-oscuro);
-}
-*/
-
-/* Estilo base compartido de la sección */
 .screen-section {
     width: 100vw;
     height: 80vh;
-    /*height: 100vh;*/
     display: flex;
     justify-content: center;
     align-items: center;
     position: relative;
-    border-bottom: none; 
+    border-bottom: none;
     background-repeat: no-repeat;
 }
 
-/* Trazo único para la Sección Luz (Ejemplo: línea horizontal inferior) */
 .trazo-seccion-1 {
     background-image: url('../images/tu-linea-horizontal.png');
-    /*background-position: bottom center;*/
-    background-position: center bottom -5px; /* El '-5px' la empuja un poquito más abajo si se sale del borde */
+    background-position: center bottom -5px;
     background-size: 100% 30px;
 }
 
-/* Trazo único para la Sección Lámpara (Ejemplo: trazo con textura vertical o diferente) */
 .trazo-seccion-2 {
     background-image: url('../images/tu-linea-vertical.png');
-    background-position: right 5px center; /* La separa 5px del borde derecho */
-    /*background-position: right center;*/
+    background-position: right 5px center;
     background-size: 30px 100%;
 }
 
-/* Trazo único para la Sección Iluminación */
 .trazo-seccion-3 {
     background-image: url('../images/tu-linea-horizontal.png');
     background-position: bottom center;
     background-size: 100% 25px;
 }
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-/* ==========================================
-   NAVEGACIÓN STICKY
-   ========================================== */
-/*
-.sticky-nav-bar {
-    margin-top: -60px; // La desplaza hacia arriba superponiéndose 
-    position: sticky;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 85px;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    //border-top: 1.5px solid var(--color-azul-oscuro);
-    //border-bottom: 1.5px solid var(--color-azul-oscuro);
-    background-color: var(--bg-pantalla);
-    //z-index: 1000;
-    z-index: 4;
-}
+/* 
+    NAVEGACIÓN STICKY
 */
-
 .sticky-nav-bar {
     position: sticky;
     top: 0;
@@ -142,8 +89,8 @@ body {
     display: flex;
     justify-content: center;
     align-items: center;
-    background-color: var(--bg-pantalla); /* Fondo sólido para que no se transparente el contenido al hacer scroll */
-    z-index: 4; /* Un z-index alto para asegurarnos de que siempre flote por encima de las secciones de 80vh */
+    background-color: var(--bg-pantalla);
+    z-index: 4;
 }
 
 .nav-links {
@@ -158,7 +105,7 @@ body {
     color: var(--color-azul-oscuro);
     padding: 13px 80px;
     border-radius: 6px;
-    transition: all 0.3s ease;
+    transition: background-color 0.28s ease, color 0.28s ease, transform 0.25s ease;
 }
 
 .nav-btn.active {
@@ -167,12 +114,13 @@ body {
 }
 
 .nav-btn:hover {
-    background-color: rgba(52, 52, 46, 0.1);
+    background-color: rgba(71, 87, 89, 0.12);
+    transform: translateY(-1px);
 }
 
-/* ==========================================
-   SECCIÓN 1: INICIO (HOME)
-   ========================================== */
+/* 
+    SECCIÓN 1: INICIO (HOME)
+*/
 .home-section {
     flex-direction: column;
     justify-content: space-between;
@@ -189,7 +137,6 @@ body {
     display: flex;
     justify-content: space-between;
     align-items: center;
-    /*padding: 0 140px;*/
     padding: 0 186px;
     z-index: 20;
 }
@@ -199,6 +146,27 @@ body {
     font-size: 1.2rem;
     color: var(--color-azul-oscuro);
     margin-left: 152px;
+}
+
+.logo-text-home {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+/* En wikiLuz_6.css */
+.home-top-bar .logo-text-home {
+    display: flex;
+    align-items: center;
+    margin-left: -71px;
+    margin-right: auto; /* Cambia a margin-left: auto; y margin-right: 0; si lo quieres a la derecha */
+}
+
+.logo-img-home {
+    width: 101px;
+    height: 101px;
+    flex-shrink: 0;
+    object-fit: contain;
 }
 
 .btn-perfil-wrapper {
@@ -219,9 +187,6 @@ body {
     transform: rotate(3deg);
 }
 
-
-
-
 .btn-perfil-home span {
     display: inline-block;
     transform: rotate(-3deg);
@@ -234,48 +199,36 @@ body {
     position: relative;
 }
 
-/* MARCO PUNTEADO GIGANTE (Z-INDEX 1: Queda oculto tras el amarillo) */
 .home-dashed-frame-outer {
     position: absolute;
     top: 24%;
     left: 5%;
-    /*width: 81%;*/
     width: 77%;
     height: 57%;
-    background-image: 
-      repeating-linear-gradient(49deg, var(--color-azul-oscuro), var(--color-azul-oscuro) 69px, transparent 50px, transparent 90px),
+    background-image:
+        repeating-linear-gradient(49deg, var(--color-azul-oscuro), var(--color-azul-oscuro) 69px, transparent 50px, transparent 90px),
         repeating-linear-gradient(176deg, var(--color-azul-oscuro), var(--color-azul-oscuro) 58px, transparent 60px, transparent 67px),
-        repeating-linear-gradient(279deg, var(--color-azul-oscuro), var(--color-azul-oscuro) 60px, transparent 50px, transparent 90px), 
+        repeating-linear-gradient(279deg, var(--color-azul-oscuro), var(--color-azul-oscuro) 60px, transparent 50px, transparent 90px),
         repeating-linear-gradient(347deg, var(--color-azul-oscuro), var(--color-azul-oscuro) 84px, transparent 60px, transparent 100px);
     background-size: 0.8px 100%, 100% 0.8px, 0.8px 100%, 100% 0.8px;
     background-position: 0 0, 0 0, 100% 0, 0 100%;
     background-repeat: no-repeat;
     transform: rotate(-1.8deg);
-    /*border-radius: 16px;*/
-    z-index: 1; /* Nivel 1: Oculto tras el fondo amarillo */
+    z-index: 1;
     pointer-events: none;
 }
 
-/* Columna Izquierda Amarilla (Z-INDEX 5: Tapa completamente las líneas traseras) */
-/* Columna Izquierda Amarilla (Con imagen de fondo y recorte diagonal) */
-/* Columna Izquierda Amarilla (Con altura al 100% para que baje por completo) */
 .home-left-yellow {
     position: absolute;
     top: 0;
     left: 0;
-    width: 59%;/*72*/
-    /*height: 128%; /* ¡Cámbialo a 100% para que baje hasta el fondo exacto! */
-    /*height: 792px;*/
+    width: 59%;
     height: 1068px;
     background-image: url('../images/home/fondo_amarilo.png');
-    /*background-size: cover;*/
     background-position: center;
     background-repeat: no-repeat;
     background-blend-mode: multiply;
-    
-    /* Polígono limpio de esquina a esquina */
     clip-path: polygon(0% 0%, 100% 0%, 55% 100%, 0% 100%);
-    
     display: flex;
     flex-direction: column;
     justify-content: space-between;
@@ -283,7 +236,6 @@ body {
     z-index: 5;
 }
 
-/* ILUSTRACIÓN DE LÁMPARA */
 .lamp-illustration-container {
     display: flex;
     flex-direction: column;
@@ -297,23 +249,89 @@ body {
 
 .lamp-cable-img {
     width: 493px;
-    /*height: 640px;*/
     object-fit: fill;
     z-index: 6;
+    cursor: pointer;
 }
 
-/* REDES SOCIALES */
+/* ----------- oscuro ----------- */
+
+body.modo-oscuro {
+    --bg-pantalla: #1b2224;
+    --color-amarillo: #4a5d5e;
+    --color-amarillo-oscuro: #c9cec4;
+    --color-azul-oscuro: #8f9c98;
+
+    --color-gris-oscuro-2: #3a484c;
+
+    --color-amarillo-gris: #6c7874;
+}
+
+body,
+body .screen-section,
+body .sticky-nav-bar,
+body .pill-btn,
+body .dark-widget-card.widget-top,
+body .dark-widget-card.widget-bottom,
+body .calculo-select,
+body .calculo-input {
+    transition: background-color 0.35s ease, color 0.35s ease, border-color 0.35s ease, filter 0.35s ease;
+}
+
+body.modo-oscuro .home-left-yellow {
+    background-image: url('../images/home/fondo_amarilo_oscuro.png');
+    background-color: transparent;
+}
+
+
+body.modo-oscuro .home-left-yellow {
+    background-image: url('../images/home/fondo_amarilo_oscuro.png');
+    background-color: transparent;
+    /*
+    background-image: none;
+    background-color: var(--color-amarillo);-*/
+}
+
+body.modo-oscuro .nav-btn.active {
+    background-color: var(--color-amarillo);
+    color: var(--color-amarillo-oscuro);
+}
+
+body.modo-oscuro .pill-btn.active {
+    background-color: var(--color-amarillo);
+    box-shadow: -1px -1px 0px 10px var(--color-amarillo);
+    color: var(--color-amarillo-oscuro);
+}
+
+body.modo-oscuro .lamp-cable-img {
+    filter: brightness(0.72) contrast(1.05);
+}
+
+body.modo-oscuro .trazo-seccion-1 {
+    background-image: url('../images/tu-linea-horizontal_oscuro.png');
+}
+
+/*
+body.modo-oscuro .arrow-btn-dark img,
+body.modo-oscuro .arrow-btn-yellow img {
+    /*filter: invert(1) brightness(0.85);
+}
+*/
+
+
 .social-icons {
     position: absolute;
-    bottom: 369px;
-    left: 143px;
+    /*bottom: 369px;
+    left: 143px;*/
+    bottom: 444px;
+    left: 667px;
     display: flex;
     gap: 56px;
     z-index: 10;
 }
 
 .social-icons a {
-    color: var(--color-amarillo-oscuro);
+    color: var(--color-azul-oscuro);
     font-size: 1.5rem;
     transition: transform 0.2s ease;
 }
@@ -322,10 +340,9 @@ body {
     transform: scale(1.15);
 }
 
-/* TÍTULO PRINCIPAL (Movido un poco más a la izquierda) */
 .home-right-title {
     width: 50%;
-    margin-left: 600px; /* Incrementamos el margen negativo para moverlo más a la izquierda */
+    margin-left: 600px;
     display: flex;
     justify-content: center;
     align-items: center;
@@ -360,40 +377,34 @@ body {
     transform: rotate(-6deg);
 }
 
-/* ==========================================
-   SECCIÓN 2: LUZ
-   ========================================== */
-/* ==========================================
-   SECCIÓN 2: LUZ (Estructura con límites)
-   ========================================== */
-
+/* 
+    SECCIÓN 2: LUZ
+*/
 #luz {
     position: relative;
     overflow: hidden;
 }
 
-/* Layout horizontal: Botones a la izquierda, Tarjetas a la derecha */
 .luz-layout {
     display: flex;
     width: 85%;
-    max-width: 1200px; /* Límite para pantallas grandes */
+    max-width: 1200px;
     gap: 40px;
     align-items: center;
     justify-content: center;
     z-index: 2;
 }
 
-/* 1. Barra  Zig-Zag */
 .luz-sidebar {
     display: flex;
     flex-direction: column;
     gap: 23px;
     width: 230px;
-    flex-shrink: 0; /* Evita que la barra se reduzca */
+    flex-shrink: 0;
 }
 
 .pill-btn {
-    background: var(--bg-pantalla); /* Fondo por defecto todos */
+    background: var(--bg-pantalla);
     border: 1.5px solid var(--color-azul-oscuro);
     border-radius: 2px;
     padding: 10px 15px;
@@ -402,28 +413,19 @@ body {
     color: var(--color-azul-oscuro);
     cursor: pointer;
     text-align: center;
-    /*box-shadow: 2px 2px 0px var(--color-azul-oscuro);*/
-    box-shadow: none; /* Los botones normales no tienen sombra */
-    /*transition: background-color 0.3s ease, transform 0.3s ease;*/
-    /*transition: background-color 0.3s ease, box-shadow 0.3s ease, transform 0.3s ease;*/
-
-    /* Transición suave */
-    transition: background-color 0.4s ease,
-                box-shadow 0.4s ease,
-                color 0.4s ease;
-
+    box-shadow: none;
+    transition: background-color 0.32s ease, box-shadow 0.32s ease, color 0.32s ease, filter 0.25s ease;
 }
 
+.pill-btn:hover:not(.active) {
+    background-color: rgba(232, 232, 107, 0.32);
+}
 
-/* Estado activo: se pinta de amarillo cuando tiene la clase .active */
 .pill-btn.active {
     background-color: var(--color-amarillo);
-    /*box-shadow: none; /* Elimina la sombra cuando el botón está activo/seleccionado */
-    /*box-shadow: 2px 2px 0px var(--color-azul-oscuro);*/
     box-shadow: -1px -1px 0px 10px var(--color-amarillo);
-
 }
-/* Inclinaciones y desplazamientos individuales (sin background fijo) */
+
 .btn-1 { transform: rotate(3deg) translateX(-8px); }
 .btn-2 { transform: rotate(-2deg) translateX(10px); }
 .btn-3 { transform: rotate(2.5deg) translateX(-6px); }
@@ -431,13 +433,11 @@ body {
 .btn-5 { transform: rotate(3.5deg) translateX(-10px); }
 .btn-6 { transform: rotate(-2deg) translateX(6px); }
 
-
-/* 2. Contenedor de las 3 Tarjetas (Alinear horizontalmente al lado de la barra) */
 .luz-cards-container {
     flex: 1;
     display: flex;
     gap: 25px;
-    height: 460px; /* Límite de altura estricto para que no se agranden */
+    height: 460px;
     max-height: 460px;
 }
 
@@ -448,38 +448,29 @@ body {
     height: 100%;
 }
 
-/* Inclinaciones individuales de los 3 cuadros */
 .luz_cuadro_1 { transform: rotate(1deg); }
 .luz_cuadro_2 { transform: rotate(-1.2deg); }
 .luz_cuadro_3 { transform: rotate(1.5deg); }
 
-/* Caja punteada con límites de scroll interno si se desborda el texto */
 .dashed-box-tall {
-
-    
-    background-image: 
-    repeating-linear-gradient(58deg, var(--color-azul-oscuro), var(--color-azul-oscuro) 69px, transparent 50px, transparent 90px),
-    repeating-linear-gradient(156deg, var(--color-azul-oscuro), var(--color-azul-oscuro) 58px, transparent 60px, transparent 67px),
-    repeating-linear-gradient(239deg, var(--color-azul-oscuro), var(--color-azul-oscuro) 60px, transparent 50px, transparent 90px), 
-    repeating-linear-gradient(322deg, var(--color-azul-oscuro), var(--color-azul-oscuro) 84px, transparent 60px, transparent 100px);
+    background-image:
+        repeating-linear-gradient(58deg, var(--color-azul-oscuro), var(--color-azul-oscuro) 69px, transparent 50px, transparent 90px),
+        repeating-linear-gradient(156deg, var(--color-azul-oscuro), var(--color-azul-oscuro) 58px, transparent 60px, transparent 67px),
+        repeating-linear-gradient(239deg, var(--color-azul-oscuro), var(--color-azul-oscuro) 60px, transparent 50px, transparent 90px),
+        repeating-linear-gradient(322deg, var(--color-azul-oscuro), var(--color-azul-oscuro) 84px, transparent 60px, transparent 100px);
     background-size: 0.8px 100%, 100% 0.8px, 0.8px 100%, 100% 0.8px;
     background-position: 0 0, 0 0, 100% 0, 0 100%;
     background-repeat: no-repeat;
-    /*border-radius: 8px;*/
-
-
-
     flex: 1;
     height: 100%;
     padding: 25px 20px;
     background-color: transparent;
-    overflow-y: auto; 
+    overflow-y: auto;
     display: flex;
     align-items: center;
     justify-content: center;
 }
 
-/* Texto interno mantenido recto */
 .luz_cuadro_1 .card-content-inner { transform: rotate(-1deg); }
 .luz_cuadro_2 .card-content-inner { transform: rotate(1.2deg); }
 .luz_cuadro_3 .card-content-inner { transform: rotate(-1.5deg); }
@@ -491,7 +482,7 @@ body {
     flex-direction: column;
     align-items: center;
     justify-content: center;
-    gap: 15px; /* Espacio entre imagen y texto si ambos coexisten */
+    gap: 15px;
 }
 
 .card-content-inner p {
@@ -501,13 +492,13 @@ body {
     color: var(--color-amarillo-oscuro);
     text-align: center;
 }
+
 .card-content-inner img {
-    width: 80px;  /* Ajusta el ancho según lo que necesites */
-    height: 80px; /* Ajusta la altura según lo que necesites */
+    width: 80px;
+    height: 80px;
     object-fit: contain;
 }
 
-/* 3. Franja amarilla inclinada de fondo */
 #luz::after {
     content: '';
     position: absolute;
@@ -521,19 +512,10 @@ body {
     z-index: 1;
     pointer-events: none;
 }
-/* ==========================================
-   SECCIÓN 3: LÁMPARA
-   ========================================== */
-/* ==========================================
-   SECCIÓN 3: LÁMPARA (Textos e imágenes 100% rectos)
-   ========================================== */
-/* ==========================================
-   SECCIÓN 3: LÁMPARA (Ajustada con height: 223px)
-   ========================================== */
 
-
-
-
+/* 
+    SECCIÓN 3: LÁMPARA
+*/
 
 #lampara {
     position: relative;
@@ -542,7 +524,7 @@ body {
 
 .lampara-wrapper {
     display: flex;
-    gap: 50px;
+    gap: 120px;
     align-items: center;
     justify-content: center;
     width: 85%;
@@ -550,63 +532,47 @@ body {
     z-index: 2;
 }
 
-/* 1. Tarjeta Principal Izquierda */
 .lampara-main-yellow {
-    position: relative; /* Clave para que el cuadro de atrás se posicione en base a este */
-    /*background-color: var(--color-amarillo); /* Tu fondo amarillo sólido */
-    /*border: 1.5px solid var(--color-amarillo-oscuro);*/
+    position: relative;
     border-radius: 16px;
     padding: 43px 25px;
     width: 500px;
-    height: 520px;
+    height: 500px;
     transform: rotate(3deg);
-    
     display: flex;
     flex-direction: column;
     justify-content: space-between;
     z-index: 2;
 }
 
-/* Cuadro de fondo independiente (la "sombra" o bloque trasero que puedes mover libremente) */
 .lampara-main-yellow::before {
     content: '';
     position: absolute;
-    
-    /* MODIFICA ESTOS VALORES PARA MOVERLO LIBREMENTE A DONDE QUIERAS */
-    top: 32px;   /* Mueve el cuadro trasero hacia abajo (+) o arriba (-) */
-    left: 26px;  /* Mueve el cuadro trasero hacia la derecha (+) o izquierda (-) */
+    top: 32px;
+    left: 26px;
     right: -58px;
     bottom: 27px;
-    
-    background-color: var(--color-amarillo); /* Tu fondo amarillo sólido */
-    /*border: 1.5px solid var(--color-amarillo-oscuro);*/
+    background-color: var(--color-amarillo);
     border-radius: 16px;
-    transform: rotate(-1deg); /* Puedes darle una rotación distinta al bloque trasero si quieres */
-    z-index: -1; /* Lo manda estrictamente atrás para que jamás tape tus textos */
+    transform: rotate(-1deg);
+    z-index: -1;
 }
-/* Marco punteado adelante */
+
 .lampara-main-yellow::after {
-     
-    background-image: 
-    repeating-linear-gradient(64deg, var(--color-azul-oscuro), var(--color-azul-oscuro) 69px, transparent 50px, transparent 90px),
-    repeating-linear-gradient(160deg, var(--color-azul-oscuro), var(--color-azul-oscuro) 58px, transparent 60px, transparent 67px),
-    repeating-linear-gradient(246deg, var(--color-azul-oscuro), var(--color-azul-oscuro) 60px, transparent 50px, transparent 90px), 
-    repeating-linear-gradient(328deg, var(--color-azul-oscuro), var(--color-azul-oscuro) 84px, transparent 60px, transparent 100px);
-    background-size: 0.8px 100%, 100% 0.8px, 0.8px 100%, 100% 0.8px;
-    background-position: 0 0, 0 0, 100% 0, 0 100%;
-    background-repeat: no-repeat;
-    /*border-radius: 8px;*/
-
-
-
-
     content: '';
     position: absolute;
     top: -12px;
     left: -12px;
     right: -12px;
     bottom: -12px;
-    /*border: 1.5px dashed var(--color-azul-oscuro);*/
+    background-image:
+        repeating-linear-gradient(64deg, var(--color-azul-oscuro), var(--color-azul-oscuro) 69px, transparent 50px, transparent 90px),
+        repeating-linear-gradient(160deg, var(--color-azul-oscuro), var(--color-azul-oscuro) 58px, transparent 60px, transparent 67px),
+        repeating-linear-gradient(246deg, var(--color-azul-oscuro), var(--color-azul-oscuro) 60px, transparent 50px, transparent 90px),
+        repeating-linear-gradient(328deg, var(--color-azul-oscuro), var(--color-azul-oscuro) 84px, transparent 60px, transparent 100px);
+    background-size: 0.8px 100%, 100% 0.8px, 0.8px 100%, 100% 0.8px;
+    background-position: 0 0, 0 0, 100% 0, 0 100%;
+    background-repeat: no-repeat;
     border-radius: 20px;
     transform: rotate(350deg);
     pointer-events: none;
@@ -619,7 +585,7 @@ body {
     align-items: center;
     position: relative;
     z-index: 2;
-    transform: rotate(357deg); /* Mantiene el contenido recto */
+    transform: rotate(357deg);
 }
 
 .lamp-icon-box {
@@ -647,24 +613,18 @@ body {
     justify-content: space-between;
     position: relative;
     z-index: 2;
-    transform: rotate(357deg); /* Mantiene el contenido recto */
+    transform: rotate(357deg);
 }
 
-/* Subtarjeta punteada con Altura de 223px e Iconos Arriba Centrados */
 .dashed-subcard {
     width: 143px;
-    height: 272px; /* Tu altura requerida */
-    flex: 0 0 auto; 
-    
-    /*border: 1.5px dashed var(--color-amarillo-oscuro);*/
+    height: 272px;
+    flex: 0 0 auto;
     border-radius: 8px;
     padding: 20px 10px;
     text-align: center;
     font-family: var(--fonts_1);
     font-size: 0.9rem;
-    /*background-color: rgba(255, 255, 255, 0.2);*/
-    
-    /* Disposición Vertical: Icono ARRIBA y Texto CENTRADO abajo */
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -672,16 +632,14 @@ body {
     overflow: hidden;
 }
 
-/* Iconos FontAwesome Arriba y Centrados */
 .dashed-subcard i {
-    font-size: 2rem; /* Tamaño de icono proporcional a la altura de 223px */
+    font-size: 2rem;
     margin-top: 10px;
     margin-bottom: 25px;
     display: block;
     color: var(--color-azul-oscuro);
 }
 
-/* Imagen en lugar de icono FontAwesome (si se usa) */
 .dashed-subcard img {
     width: 35px;
     height: 35px;
@@ -690,7 +648,6 @@ body {
     margin-bottom: 25px;
 }
 
-/* Texto centrado vertical y horizontalmente */
 .dashed-subcard p {
     font-family: var(--fonts_1);
     font-size: 0.95rem;
@@ -700,52 +657,22 @@ body {
     margin: 0;
 }
 
-
-/* 2. Tarjetas Derechas (Luminarias y Elementos) */
 .lampara-side-dark {
     width: 420px;
     position: relative;
     height: 449px;
     display: flex;
-    flex-direction: column;         /* Apila las tarjetas verticalmente */
-    justify-content: space-between; /* Distribuye una arriba y otra abajo uniformemente */
+    flex-direction: column;
+    justify-content: space-between;
     z-index: 3;
 }
 
-
-/* --- TARJETA INFERIOR (Elementos / Difusor) --- */
-.dark-widget-card.widget-bottom {
-    position: relative;
-    width: 380px;
-    transform: none; /* Quitamos cualquier rotación para que el texto esté totalmente recto */
-    background-color: var(--bg-pantalla);
-}
-
-
-/* --- TARJETA SUPERIOR (Luminarias / Empotrada) --- */
-.dark-widget-card.widget-top {
-    position: relative;
-    width: 380px;
-    transform: none; /* Quitamos cualquier rotación para que el texto esté totalmente recto */
-    background-color: var(--bg-pantalla);
-}
-
-.dark-widget-card.widget-top,
-.dark-widget-card.widget-bottom {
-    position: relative;
-    top: 0;
-    left: 30px;
-    width: 308px;/*width: 380px;*/
-
-}
-/* Contenedor relativo que une cada tarjeta con su fondo amarillo */
 .card-wrapper-relative {
     position: relative;
     width: 150px;
-   height: 125px; /* Ajusta la altura según lo que necesite cada tarjeta */
+    height: 125px;
 }
 
-/* Estilo base para los dos cuadros amarillos de fondo (las sombras visuales) */
 .yellow-shadow-box {
     position: absolute;
     top: 0;
@@ -754,19 +681,17 @@ body {
     height: 100%;
     background-color: var(--color-amarillo);
     border-radius: 16px;
-    z-index: 1; /* Se queda estrictamente detrás del contenido */
-}
-/* --- CUADRO AMARILLO DE ARRIBA (Empotrada) --- */
-.box-top {
-    /* ¡MÚEVELO Y RÓTALO LIBREMENTE AQUÍ! */
-    transform: rotate(10deg) translate(-5px, -5px); 
+    z-index: 1;
 }
 
-/* --- CUADRO AMARILLO DE ABAJO (Difusor) --- */
-.box-bottom {
-    /* ¡MÚEVELO Y RÓTALO LIBREMENTE AQUÍ! */
-    transform: rotate( 13deg) translate(8px, 5px);
+.box-top {
+    transform: rotate(10deg) translate(-5px, -5px);
 }
+
+.box-bottom {
+    transform: rotate(13deg) translate(8px, 5px);
+}
+
 .dark-widget-card {
     position: absolute;
     top: 0;
@@ -778,7 +703,7 @@ body {
     display: flex;
     flex-direction: column;
     gap: 12px;
-    z-index: 2; /* Encima del fondo amarillo */
+    z-index: 2;
 }
 
 .dark-widget-card::before {
@@ -788,43 +713,25 @@ body {
     left: -8px;
     right: 8px;
     bottom: 8px;
-    /*background-color: var(--color-amarillo); /* El color amarillo que quieres */
     border: 1.5px solid var(--color-azul-oscuro);
     border-radius: 16px;
-    z-index: -1; /* Detrás del texto */
-
-    /* ¡AQUÍ ROTA LIBREMENTE EL BLOQUE TRASERO AL ÁNGULO QUE QUIERAS! */
-    transform: rotate(354deg); /* O el valor inclinado que te gustaba */
-}
-/* --- TARJETA SUPERIOR (Luminarias) --- */
-/*
-.widget-top {
-    transform: rotate(2.5deg); /* Gira la tarjeta principal hacia la derecha 
-}
-*/
-/* El contenido de adentro gira exactamente lo contrario (-2.5deg) para enderezarse */
-/*
-.widget-top .widget-label,
-.widget-top .widget-carousel-controls {
-    transform: rotate(-2.5deg); 
-}
-*/
-
-/* --- TARJETA INFERIOR (Elementos) --- */
-/*
-.widget-bottom {
-    transform: rotate(-2deg); /* Gira la tarjeta principal hacia la izquierda 
-}
-*/
-.widget-top,
-.widget-bottom {
-    transform: none; /* Mantiene el contenido perfectamente horizontal y legible */
+    z-index: -1;
+    transform: rotate(354deg);
 }
 
-/* El contenido de adentro gira exactamente lo contrario (2deg) para enderezarse */
+.dark-widget-card.widget-top,
+.dark-widget-card.widget-bottom {
+    position: relative;
+    top: 0;
+    left: 30px;
+    width: 308px;
+    transform: none;
+    background-color: var(--bg-pantalla);
+}
+
 .widget-bottom .widget-label,
 .widget-bottom .widget-carousel-controls {
-    transform: rotate(2deg); 
+    transform: rotate(2deg);
 }
 
 .widget-label {
@@ -840,8 +747,8 @@ body {
     display: flex;
     flex-direction: column;
     align-items: center;
-    justify-content: center; /* ¡Clave para que se junten al centro y no se separen! */
-    gap: 8px;                /* Espacio corto y controlado entre la imagen y el texto */
+    justify-content: center;
+    gap: 8px;
     width: 100%;
 }
 
@@ -851,14 +758,14 @@ body {
     align-items: center;
 }
 
-/* Contenedor en línea para alinear flechas y texto juntos al centro */
 .widget-selector-inline {
     display: flex;
     align-items: center;
     justify-content: center;
-    gap: 15px; /* Espacio entre la flecha, la palabra y la otra flecha */
+    gap: 15px;
     width: 100%;
 }
+
 .widget-image {
     width: 75px;
     height: 75px;
@@ -869,11 +776,9 @@ body {
     font-family: var(--fonts_1);
     font-size: 1.3rem;
     text-align: center;
-   
 }
 
-/* Botones de Flecha */
-.arrow-btn-dark, 
+.arrow-btn-dark,
 .arrow-btn-yellow {
     background: transparent;
     border: none;
@@ -884,26 +789,32 @@ body {
     width: 35px;
     height: 35px;
     padding: 0;
-    transition: transform 0.2s ease;
+    transition: transform 0.22s ease, opacity 0.22s ease;
 }
 
-.arrow-btn-dark:hover, 
+.arrow-btn-dark:hover,
 .arrow-btn-yellow:hover {
-    transform: scale(1.15);
+    transform: scale(1.1);
+    opacity: 0.85;
 }
 
-.arrow-btn-dark img, 
+.arrow-btn-dark img,
 .arrow-btn-yellow img {
     width: 22px;
     height: 22px;
     object-fit: contain;
 }
-/* ==========================================
-   SECCIÓN 4: ILUMINACIÓN
-   ========================================== */
-/* ==========================================
-   SECCIÓN 4: ILUMINACIÓN (Rangos de tamaño controlados)
-   ========================================== */
+
+#diseno-infolux {
+    font-family: var(--fonts_1);
+    padding: 12px;
+    font-size: 0.6rem;
+}
+
+/* 
+    SECCIÓN 4: ILUMINACIÓN
+*/
+
 #iluminacion {
     position: relative;
     overflow: hidden;
@@ -935,7 +846,7 @@ body {
     justify-content: center;
     position: relative;
     z-index: 2;
-    padding: 0 45px; /* Espacio lateral para las píldoras largas */
+    padding: 0 45px;
 }
 
 .ilum-center-content {
@@ -945,13 +856,12 @@ body {
     gap: 0px;
 }
 
-/* Píldoras oscuras verticales alargadas */
 .vertical-pill-dark {
     position: absolute;
     background-color: var(--color-gris-oscuro-2);
     color: var(--bg-pantalla);
     width: 55px;
-    height: 180px; 
+    height: 180px;
     border-radius: 12px;
     writing-mode: vertical-rl;
     text-orientation: mixed;
@@ -961,25 +871,24 @@ body {
     align-items: center;
     justify-content: center;
     z-index: 3;
-    /*box-shadow: 2px 2px 0px 0px var(--color-amarillo);*/
 }
 
-.pill-left { 
-    top: 5%; 
-    left: 20px; 
+.pill-left {
+    top: 5%;
+    left: -26px;
     transform: rotate(350deg);
     box-shadow: -23px 10px 0px 3px var(--color-amarillo);
 }
 
-.pill-right { 
-    bottom: 73px; 
-    right: 20px; 
-    transform: rotate(-350deg); 
+.pill-right {
+    bottom: 73px;
+    right: -26px;
+    transform: rotate(-350deg);
     box-shadow: 23px 10px 0px 3px var(--color-amarillo);
 }
 
-/* Filas de controles */
-.ilum-top-controls, .ilum-bottom-controls {
+.ilum-top-controls,
+.ilum-bottom-controls {
     display: flex;
     gap: 40px;
     align-items: center;
@@ -988,64 +897,43 @@ body {
     padding-bottom: 29px;
 }
 
-/* 1. CAJA DE SELECTOR (Controla el rango para textos como "Directa" o "Integrada en la arquitectura") */
 .dashed-selector-box {
-
-    background-image: 
-   repeating-linear-gradient(-5deg, var(--color-amarillo-gris), var(--color-amarillo-gris) 69px, transparent 50px, transparent 90px),
-    repeating-linear-gradient(164deg, var(--color-amarillo-gris), var(--color-amarillo-gris) 58px, transparent 60px, transparent 67px),
-    repeating-linear-gradient(163deg, var(--color-amarillo-gris), var(--color-amarillo-gris) 60px, transparent 50px, transparent 90px), 
-    repeating-linear-gradient(202deg, var(--color-amarillo-gris), var(--color-amarillo-gris) 84px, transparent 60px, transparent 100px);
+    background-image:
+        repeating-linear-gradient(-5deg, var(--color-amarillo-gris), var(--color-amarillo-gris) 69px, transparent 50px, transparent 90px),
+        repeating-linear-gradient(164deg, var(--color-amarillo-gris), var(--color-amarillo-gris) 58px, transparent 60px, transparent 67px),
+        repeating-linear-gradient(163deg, var(--color-amarillo-gris), var(--color-amarillo-gris) 60px, transparent 50px, transparent 90px),
+        repeating-linear-gradient(202deg, var(--color-amarillo-gris), var(--color-amarillo-gris) 84px, transparent 60px, transparent 100px);
     background-size: 0.8px 100%, 100% 0.8px, 0.8px 100%, 100% 0.8px;
     background-position: 0 0, 0 0, 100% 0, 0 100%;
     background-repeat: no-repeat;
-
-
-    /*border: 1.5px dashed var(--color-azul-oscuro);
-    border-radius: 8px;
-    padding: 10px 15px;*/
-    
-    /* Tamaño fijo para que NUNCA se agrande ni se achique, sin importar el texto */
-    width: 300px; /* Puedes ajustar este número exacto si lo quieres un poquito más ancho o angosto */
-    height: 90px; /* Altura fija para mantener simetría */
-    flex-shrink: 0; /* Evita que el contenedor flexible la deforme */
-    
-    /* Distribución interna: Flecha izquierda a la izquierda, Texto al centro, Flecha derecha a la derecha */
+    width: 300px;
+    height: 90px;
+    flex-shrink: 0;
     display: flex;
     align-items: center;
     justify-content: space-between;
-    
     font-family: var(--fonts_3);
     font-size: 2.5rem;
-    transform: rotate( 357deg);
+    transform: rotate(357deg);
 }
-/* Aseguramos que el texto del selector quede perfectamente centrado en su espacio fijo */
+
 .dashed-selector-box span {
-    /*font-size: var(--fonts_1);*/
     flex: 1;
     text-align: center;
-    white-space: nowrap; /* Evita que los textos largos se bajen de renglón dentro del selector */
+    white-space: nowrap;
     overflow: hidden;
-    text-overflow: ellipsis; /* Si un texto es larguísimo, lo maneja de forma limpia */
+    text-overflow: ellipsis;
 }
 
-/* 2. CAJA DE INFORMACIÓN (Controla el rango para descripciones cortas o largas) */
 .dashed-info-box {
-
-    background-image: 
-    repeating-linear-gradient(181deg, var(--color-amarillo-gris), var(--color-amarillo-gris) 69px, transparent 50px, transparent 90px),
-    repeating-linear-gradient(205deg, var(--color-amarillo-gris), var(--color-amarillo-gris) 58px, transparent 60px, transparent 67px),
-    repeating-linear-gradient(365deg, var(--color-amarillo-gris), var(--color-amarillo-gris) 60px, transparent 50px, transparent 90px), 
-    repeating-linear-gradient(134deg, var(--color-amarillo-gris), var(--color-amarillo-gris) 84px, transparent 60px, transparent 100px);
+    background-image:
+        repeating-linear-gradient(181deg, var(--color-amarillo-gris), var(--color-amarillo-gris) 69px, transparent 50px, transparent 90px),
+        repeating-linear-gradient(205deg, var(--color-amarillo-gris), var(--color-amarillo-gris) 58px, transparent 60px, transparent 67px),
+        repeating-linear-gradient(365deg, var(--color-amarillo-gris), var(--color-amarillo-gris) 60px, transparent 50px, transparent 90px),
+        repeating-linear-gradient(134deg, var(--color-amarillo-gris), var(--color-amarillo-gris) 84px, transparent 60px, transparent 100px);
     background-size: 0.8px 100%, 100% 0.8px, 0.8px 100%, 100% 0.8px;
     background-position: 0 0, 0 0, 100% 0, 0 100%;
     background-repeat: no-repeat;
-
-    /*border: 1.5px dashed var(--color-azul-oscuro);
-    border-radius: 8px;*/
-
-    /*padding: 12px 20px;*/
-    /*padding: 21px;*/
     display: flex;
     align-items: center;
     justify-content: center;
@@ -1053,40 +941,29 @@ body {
     font-family: var(--fonts_1);
     font-size: 1.3rem;
     line-height: 2.4;
-    
-    /* Rango de tamaño flexible pero contenido */
     flex: 1;
     min-width: 320px;
     max-width: 520px;
-    /* Permite que si el texto es muy largo, baje de línea ordenadamente sin romper el diseño */
     word-break: break-word;
-    height: 90px
+    height: 90px;
 }
 
-/* ==========================================
-   TAMAÑO DEFINIDO PARA LAS IMÁGENES DE INFORMACIÓN
-   ========================================== */
 .dashed-info-box .sistema-imagen,
 .dashed-info-box .metodo-imagen {
-    /* Define el ancho y alto exacto que quieres para tus ilustraciones */
-    height: 117px;  /* Altura fija para mantener simetría */
-    object-fit: contain; /* Evita que la imagen se deforme o se estire de más */
+    height: 117px;
+    object-fit: contain;
 }
 
-
-
 .dashed-separator-line {
-    border: none; /* Quitamos el borde clásico */
-    height: 3px;  /* Grosor de la línea */
+    border: none;
+    height: 6px;
     width: 100%;
     margin: 20px 0;
-    
-    /* Tu gradiente repetido adaptado para que dibuje los "trazos" de forma horizontal */
-    background-image:repeating-linear-gradient(
-        114deg, 
-        var(--color-amarillo-gris), 
-        var(--color-amarillo-gris) 15px, 
-        transparent 15px, 
+    background-image: repeating-linear-gradient(
+        114deg,
+        var(--color-amarillo-gris),
+        var(--color-amarillo-gris) 15px,
+        transparent 15px,
         transparent 30px
     );
     background-size: 100% 100%;
@@ -1101,12 +978,16 @@ body {
     justify-content: center;
     width: 100%;
 }
-/* ==========================================
-   SECCIÓN 5: DISEÑO
-   ========================================== */
-/* ==========================================
-   SECCIÓN 5: DISEÑO (Marco punteado 100% independiente y libre)
-   ========================================== */
+
+.sistema-nombre,
+.metodo-nombre {
+    color: var(--color-azul-oscuro);
+}
+
+/* 
+    SECCIÓN 5: DISEÑO
+*/
+
 
 .diseno-container {
     width: 43%;
@@ -1114,37 +995,26 @@ body {
     display: flex;
     justify-content: center;
     align-items: center;
-    min-height: 224px; /* Espacio base para que flote todo libremente */
+    min-height: 224px;
 }
 
-/* --- MARCO PUNTEADO LIBRE (Ahora flota por detrás y no altera nada del contenido) --- */
 .diseno-dashed-frame {
-
-    
-    background-image: 
-    repeating-linear-gradient(176deg, var(--color-azul-oscuro), var(--color-azul-oscuro) 69px, transparent 50px, transparent 90px),
-    repeating-linear-gradient(206deg, var(--color-amarillo-gris), var(--color-amarillo-gris) 58px, transparent 60px, transparent 67px),
-    repeating-linear-gradient(364deg, var(--color-amarillo-gris), var(--color-amarillo-gris) 60px, transparent 50px, transparent 90px), 
-    repeating-linear-gradient(134deg, var(--color-amarillo-gris), var(--color-amarillo-gris) 84px, transparent 60px, transparent 100px);
+    background-image:
+        repeating-linear-gradient(176deg, var(--color-azul-oscuro), var(--color-azul-oscuro) 69px, transparent 50px, transparent 90px),
+        repeating-linear-gradient(206deg, var(--color-amarillo-gris), var(--color-amarillo-gris) 58px, transparent 60px, transparent 67px),
+        repeating-linear-gradient(364deg, var(--color-amarillo-gris), var(--color-amarillo-gris) 60px, transparent 50px, transparent 90px),
+        repeating-linear-gradient(134deg, var(--color-amarillo-gris), var(--color-amarillo-gris) 84px, transparent 60px, transparent 100px);
     background-size: 0.8px 100%, 100% 0.8px, 0.8px 100%, 100% 0.8px;
     background-position: 0 0, 0 0, 100% 0, 0 100%;
     background-repeat: no-repeat;
-
-
     position: absolute;
-    width: 100%;          /* ¡Maneja el ancho libremente aquí! */
-    height: 64%;         /* ¡Maneja la altura libremente aquí! */
-    /*border: 1.5px dashed var(--color-azul-oscuro);
-    border-radius: 16px;*/
-    
-    /* ¡Gíralo, inclínalo o muévelo con total libertad sin que afecte al texto! */
-    transform: rotate(3deg); 
-    
+    width: 100%;
+    height: 64%;
+    transform: rotate(3deg);
     z-index: 9;
-    pointer-events: none; /* Permite hacer clic a través de él si fuera necesario */
+    pointer-events: none;
 }
 
-/* --- CONTENIDO PRINCIPAL (Totalmente independiente, centrado y estable) --- */
 .diseno-content-wrapper {
     position: relative;
     z-index: 2;
@@ -1164,7 +1034,6 @@ body {
     margin-bottom: 5px;
 }
 
-/* Tamaño fijo definido para que "Lugar" no se mueva ni cambie de tamaño */
 .diseno-tag {
     font-family: var(--fonts_3);
     font-size: 1.6rem;
@@ -1174,12 +1043,10 @@ body {
     display: inline-block;
 }
 
-/* Cuadrícula compacta */
 .diseno-grid {
     display: grid;
     grid-template-columns: repeat(4, 1fr);
     grid-template-rows: repeat(2, 1fr);
-    /*gap: 12px;*/
     justify-items: center;
     width: 100%;
 }
@@ -1222,7 +1089,6 @@ body {
     background-color: var(--color-amarillo);
 }
 
-/* --- ROTACIONES ARTÍSTICAS DE LAS TARJETAS --- */
 .card-rot-1 { transform: rotate(-2.5deg); }
 .card-rot-2 { transform: rotate(1.8deg); }
 .card-rot-3 { transform: rotate(-3deg); }
@@ -1238,50 +1104,35 @@ body {
     transform: rotate(0deg);
 }
 
-/* --- 8 CUADROS DECORATIVOS VISUALES LIBRES (Parte visual extra) --- */
 .visual-deco-box {
-
-    background-image: 
-repeating-linear-gradient(249deg, var(--color-azul-oscuro), var(--color-azul-oscuro) 69px, transparent 50px, transparent 90px),
-    repeating-linear-gradient(340deg, var(--color-amarillo-gris), var(--color-amarillo-gris) 58px, transparent 60px, transparent 67px),
-    repeating-linear-gradient(429deg, var(--color-amarillo-gris), var(--color-amarillo-gris) 60px, transparent 50px, transparent 90px), 
-    repeating-linear-gradient(158deg, var(--color-amarillo-gris), var(--color-amarillo-gris) 84px, transparent 60px, transparent 100px);
+    background-image:
+        repeating-linear-gradient(249deg, var(--color-azul-oscuro), var(--color-azul-oscuro) 69px, transparent 50px, transparent 90px),
+        repeating-linear-gradient(340deg, var(--color-amarillo-gris), var(--color-amarillo-gris) 58px, transparent 60px, transparent 67px),
+        repeating-linear-gradient(429deg, var(--color-amarillo-gris), var(--color-amarillo-gris) 60px, transparent 50px, transparent 90px),
+        repeating-linear-gradient(158deg, var(--color-amarillo-gris), var(--color-amarillo-gris) 84px, transparent 60px, transparent 100px);
     background-size: 0.8px 100%, 100% 0.8px, 0.8px 100%, 100% 0.8px;
     background-position: 0 0, 0 0, 100% 0, 0 100%;
     background-repeat: no-repeat;
-
-
-
     position: absolute;
     width: 130px;
     height: 130px;
-    /*border: 1px dashed rgba(44, 44, 44, 0.25);*/
-    /*background: transparent;*/
     pointer-events: none;
     z-index: 5;
 }
 
-
-.deco-1 { 
-    top: 81px; left: 77px; transform: rotate(4deg); 
-}
-
+.deco-1 { top: 81px; left: 77px; transform: rotate(4deg); }
 .deco-2 { top: 89px; right: 86px; transform: rotate(-5deg); }
-.deco-3 { bottom:  164px; left: 431px; transform: rotate(-3deg); }
+.deco-3 { bottom: 164px; left: 431px; transform: rotate(-3deg); }
 .deco-4 { bottom: 167px; right: 434px; transform: rotate(6deg); }
 .deco-5 { top: 64%; left: 88px; transform: rotate(-2deg); }
 .deco-6 { top: 64%; right: 431px; transform: rotate(3deg); }
 .deco-7 { top: 252px; left: 53%; transform: rotate(-4deg); }
 .deco-8 { bottom: 10px; right: 10%; transform: rotate(5deg); }
 
-
-/*--------- oculto*/
-/* Clase auxiliar para ocultar elementos desde JS */
 .oculto {
     display: none !important;
 }
 
-/* Imagen de nivel de iluminación ocupando todo el grid */
 .nivel-iluminacion-imagen {
     grid-column: 1 / -1;
     grid-row: 1 / -1;
@@ -1290,7 +1141,6 @@ repeating-linear-gradient(249deg, var(--color-azul-oscuro), var(--color-azul-osc
     object-fit: contain;
 }
 
-/* Formulario de cálculo ocupando el espacio fijo de los 8 cuadros */
 .formulario-calculo {
     grid-column: 1 / -1;
     grid-row: 1 / -1;
@@ -1338,11 +1188,6 @@ repeating-linear-gradient(249deg, var(--color-azul-oscuro), var(--color-azul-osc
     font-family: var(--fonts_3);
     font-size: 1.4rem;
     cursor: pointer;
-    transition: filter 0.2s ease;
-}
-
-.btn-calcular-lumenes:hover {
-    filter: brightness(0.95);
 }
 
 .resultado-calculo-box {
@@ -1356,13 +1201,346 @@ repeating-linear-gradient(249deg, var(--color-azul-oscuro), var(--color-azul-osc
     border: 1px dashed var(--color-azul-oscuro);
 }
 
+.btn-calcular-lumenes,
+.btn-borrar-calculo,
+.btn-save,
+.btn-borrar {
+    transition: filter 0.25s ease, transform 0.22s ease, background-color 0.25s ease;
+}
+
+.btn-calcular-lumenes:hover,
+.btn-borrar-calculo:hover,
+.btn-save:hover {
+    filter: brightness(0.97);
+    transform: translateY(-1px);
+}
 
 
+/* Puedes poner esto en wikiLuz.css o en un archivo aparte si quieres mantenerlo separado */
+.wikiluz-footer {
+    width: 100%;
+    min-height: 166px;
+    background-color: #ebeabc;
+}
 
+body.modo-oscuro .wikiluz-footer {
+    background-color: #121718;
+}
 
+    /* 
+   TRANSICIONES DE CAMBIO DE INFORMACIÓN
+   */
+.card-content-inner,
+.lamp-type-title,
+.lamp-type-image,
+.color_cuadro-1 p,
+.potencia_cuadro-2 p,
+.lugar_cuadro-3 p,
+.lampara_wt_cuadro_1,
+.luminaria-image,
+.lampara_wb_cuadro_2,
+.elemento-image,
+.sistema-nombre,
+.sistema-imagen,
+.metodo-nombre,
+.metodo-imagen,
+.metodo-descripcion,
+.diseno-tag,
+.diseno-imagen {
+    transition: opacity 0.28s ease, transform 0.28s ease;
+}
 
+.cambiando-dato {
+    opacity: 0 !important;
+    transform: translateY(3px);
+}
 
+    /* 
+    ESCALADO RESPONSIVO (WIKILUZ)
+   */
+@media (max-width: 1440px) {
+    .nav-btn {
+        padding: 12px 45px;
+        font-size: 1.15rem;
+    }
 
+    .home-top-bar {
+        padding: 0 60px;
+    }
 
+    .logo-text-home {
+        margin-left: 0;
+    }
 
+    .btn-perfil-home {
+        margin-right: 0;
+        padding: 12px 36px;
+    }
+
+    .home-left-yellow {
+        width: 56%;
+        height: 100%;
+    }
+
+    .lamp-cable-img {
+        width: 360px;
+    }
+
+    .social-icons {
+        bottom: 120px;
+        left: 80px;
+        gap: 35px;
+    }
+
+    .home-right-title {
+        width: 45%;
+        margin-left: auto;
+        margin-right: 5%;
+    }
+
+    .hand-title-box h1 {
+        font-size: 6rem;
+    }
+
+    .diseno-container {
+        width: 65%;
+    }
+}
+
+@media (max-width: 1100px) {
+    .screen-section {
+        height: auto;
+        min-height: 80vh;
+        padding: 60px 20px;
+    }
+
+    .nav-links {
+        gap: 8px;
+        flex-wrap: wrap;
+        justify-content: center;
+    }
+
+    .nav-btn {
+        padding: 10px 22px;
+        font-size: 1rem;
+    }
+
+    .home-section {
+        height: auto;
+        min-height: 85vh;
+        padding-top: 120px;
+    }
+
+    .home-wrapper {
+        flex-direction: column;
+        align-items: center;
+        gap: 30px;
+    }
+
+    .home-left-yellow {
+        position: relative;
+        width: 90%;
+        height: 360px;
+        clip-path: none;
+        border-radius: 12px;
+    }
+
+    .lamp-cable-img {
+        width: 240px;
+    }
+
+    .social-icons {
+        bottom: 20px;
+        left: 50%;
+        transform: translateX(-50%);
+    }
+
+    .home-right-title {
+        width: 100%;
+        margin: 0;
+    }
+
+    .hand-title-box h1 {
+        font-size: 4.2rem;
+        text-align: center;
+    }
+
+    .luz-layout,
+    .lampara-wrapper {
+        flex-direction: column;
+        width: 95%;
+        gap: 30px;
+    }
+
+    .luz-sidebar {
+        flex-direction: row;
+        flex-wrap: wrap;
+        justify-content: center;
+        width: 100%;
+    }
+
+    .luz-cards-container {
+        width: 100%;
+        height: auto;
+        max-height: none;
+        flex-wrap: wrap;
+    }
+
+    .lampara-main-yellow {
+        width: 100%;
+        max-width: 480px;
+        height: auto;
+        min-height: 440px;
+    }
+
+    .lampara-side-dark {
+        width: 100%;
+        max-width: 420px;
+        height: auto;
+        gap: 35px;
+    }
+
+    .ilum-top-controls,
+    .ilum-bottom-controls {
+        flex-direction: column;
+        width: 100%;
+        gap: 15px;
+    }
+
+    .dashed-info-box {
+        min-width: 0;
+        width: 100%;
+    }
+
+    .diseno-container {
+        width: 92%;
+    }
+
+    .diseno-grid {
+        grid-template-columns: repeat(2, 1fr);
+        grid-template-rows: auto;
+        gap: 15px;
+    }
+
+    [class*="deco-"] {
+        display: none;
+    }
+}
+
+@media (max-width: 600px) {
+    .home-top-bar {
+        padding: 0 20px;
+        top: 20px;
+    }
+
+    .dashed-selector-box {
+        width: 100%;
+        font-size: 1.8rem;
+    }
+
+    .lamp-subcards-row {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .dashed-subcard {
+        width: 100%;
+        max-width: 240px;
+        height: auto;
+        min-height: 140px;
+    }
+}
+
+/* 
+    ANIMACIONES AL ENTRAR A CADA SECCIÓN
+*/
+#luz .pill-btn {
+    opacity: 0;
+    transition: opacity 0.55s ease, transform 0.65s cubic-bezier(0.22, 1, 0.36, 1), background-color 0.4s ease, box-shadow 0.4s ease, color 0.4s ease;
+}
+
+#luz .btn-1 { transform: rotate(3deg) translate(-48px, 0); }
+#luz .btn-2 { transform: rotate(-2deg) translate(-30px, 0); }
+#luz .btn-3 { transform: rotate(2.5deg) translate(-46px, 0); }
+#luz .btn-4 { transform: rotate(-3deg) translate(-32px, 0); }
+#luz .btn-5 { transform: rotate(3.5deg) translate(-50px, 0); }
+#luz .btn-6 { transform: rotate(-2deg) translate(-34px, 0); }
+
+#luz.is-visible .pill-btn { opacity: 1; }
+#luz.is-visible .btn-1 { transform: rotate(3deg) translateX(-8px); transition-delay: 0.05s; }
+#luz.is-visible .btn-2 { transform: rotate(-2deg) translateX(10px); transition-delay: 0.1s; }
+#luz.is-visible .btn-3 { transform: rotate(2.5deg) translateX(-6px); transition-delay: 0.15s; }
+#luz.is-visible .btn-4 { transform: rotate(-3deg) translateX(8px); transition-delay: 0.2s; }
+#luz.is-visible .btn-5 { transform: rotate(3.5deg) translateX(-10px); transition-delay: 0.25s; }
+#luz.is-visible .btn-6 { transform: rotate(-2deg) translateX(6px); transition-delay: 0.3s; }
+
+#luz .dashed-box-tall {
+    opacity: 0;
+    transition: opacity 0.75s ease 0.2s;
+}
+#luz.is-visible .dashed-box-tall {
+    opacity: 1;
+}
+
+#lampara .lampara-wrapper {
+    opacity: 0;
+    transition: opacity 0.75s ease;
+}
+#lampara.is-visible .lampara-wrapper {
+    opacity: 1;
+}
+
+#lampara .lampara-side-dark .card-wrapper-relative {
+    opacity: 0;
+    transform: translateX(60px);
+    transition: opacity 0.65s ease, transform 0.65s cubic-bezier(0.22, 1, 0.36, 1);
+}
+#lampara.is-visible .lampara-side-dark .card-wrapper-relative {
+    opacity: 1;
+    transform: translateX(0);
+}
+#lampara.is-visible .lampara-side-dark .card-wrapper-relative:nth-child(2) {
+    transition-delay: 0.15s;
+}
+
+#iluminacion .iluminacion-wrapper > *,
+#iluminacion .vertical-pill-dark {
+    opacity: 0;
+    transition: opacity 0.65s ease, transform 0.65s cubic-bezier(0.22, 1, 0.36, 1);
+}
+
+#iluminacion .dashed-separator-line {
+    opacity: 1 !important;
+}
+
+#iluminacion .pill-left {
+    transform: rotate(350deg) translateX(55px);
+}
+#iluminacion.is-visible .pill-left {
+    opacity: 1;
+    transform: rotate(350deg) translateX(0);
+}
+
+#iluminacion .pill-right {
+    transform: rotate(-350deg) translateX(-55px);
+}
+#iluminacion.is-visible .pill-right {
+    opacity: 1;
+    transform: rotate(-350deg) translateX(0);
+}
+
+#iluminacion.is-visible .iluminacion-wrapper > * {
+    opacity: 1;
+    transition-delay: 0.15s;
+}
+
+#diseno .diseno-content-wrapper {
+    opacity: 0;
+    transform: translateY(55px);
+    transition: opacity 0.75s ease, transform 0.75s cubic-bezier(0.22, 1, 0.36, 1);
+}
+#diseno.is-visible .diseno-content-wrapper {
+    opacity: 1;
+    transform: translateY(0);
+}
 

@@ -1,0 +1,56 @@
+/* ../assets/css/luciernagas.css */
+body,
+.main-container {
+    position: relative;
+    overflow-x: clip;
+}
+
+#fondo-luciernagas {
+    position: absolute;
+    top: 0;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 140vw;
+    min-width: 100%;
+    height: 100%;
+    overflow: hidden;
+    pointer-events: none;
+    z-index: 0;
+}
+
+.luciernaga-bolita {
+    position: absolute;
+    border-radius: 50%;
+    background-color: var(--color-amarillo, #E8E86B);
+    opacity: 0.25;
+    box-shadow: 0 0 8px rgba(232, 232, 107, 0.35);
+    transform: translate3d(0, 0, 0);
+    animation: flotar-luciernaga var(--duracion, 14s) ease-in-out infinite alternate,
+               brillar-luciernaga var(--parpadeo, 5s) ease-in-out infinite alternate;
+}
+
+body.modo-oscuro .luciernaga-bolita {
+    opacity: 0.38;
+    box-shadow: 0 0 12px rgba(232, 232, 107, 0.45);
+}
+
+@keyframes flotar-luciernaga {
+    0% {
+        transform: translate3d(0, 0, 0);
+    }
+    50% {
+        transform: translate3d(var(--dx, 24px), var(--dy, -24px), 0);
+    }
+    100% {
+        transform: translate3d(calc(var(--dx, 24px) * -0.6), calc(var(--dy, -24px) * 0.7), 0);
+    }
+}
+
+@keyframes brillar-luciernaga {
+    0% {
+        filter: brightness(0.85);
+    }
+    100% {
+        filter: brightness(1.25);
+    }
+}
